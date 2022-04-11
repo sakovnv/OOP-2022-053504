@@ -1,5 +1,5 @@
 ﻿using Lab_Work.Data;
-using Lab_Work.Entities.User;
+using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +40,7 @@ namespace Lab_Work
                     {
                         if (user.IsApproved == true)
                         {
+                            usersDb.Save();
                             Logged.User = user;
                             if (user.HasRole("admin"))
                             {
@@ -69,6 +70,13 @@ namespace Lab_Work
                     MessageBox.Show("This account wasn't found", "Warning");
                 }
             }
+        }
+
+        private void AsCompanyLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CompanyRegisterForm form = new CompanyRegisterForm(this);
+            form.Show();
+            Hide();
         }
     }
 }

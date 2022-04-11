@@ -15,7 +15,7 @@ namespace Lab_Work.Entities
         public string PassportNumber { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public Bank Bank { get; set; }
+        public int BankId { get; set; }
 
         public List<Deposit> Deposits { get; set; }
         public List<Loan> Loans { get; set; }
@@ -48,11 +48,16 @@ namespace Lab_Work.Entities
             return deposit;
         }
 
-        public void WithdrawDeposit(int id)
+        public Deposit WithdrawDeposit(int id)
         {
-            Deposit deposit = Deposits.Where(item => item.Id == id).FirstOrDefault();
+            Deposit deposit = Deposits.Find(item => item.Id == id);
 
-            Deposits.Remove(deposit);
+            if (deposit != null)
+            { 
+                Deposits.Remove(deposit);
+            }
+
+            return deposit;
         }
 
         public void TransactionDeposit(Client client, Deposit deposit)
@@ -104,7 +109,7 @@ namespace Lab_Work.Entities
             }
             else
             {
-                account.Id = 0;
+                account.Id = BankId * 100 + Id * 10 + 0;
             }
 
             Accounts.Add(account);
@@ -117,6 +122,13 @@ namespace Lab_Work.Entities
             BankAccount account = Accounts.Find(item => item.Id == id);
             
             Accounts.Remove(account);
+
+            return account;
+        }
+
+        public BankAccount GetAccount(int id)
+        {
+            BankAccount account = Accounts.Find(item => item.Id == id);
 
             return account;
         }

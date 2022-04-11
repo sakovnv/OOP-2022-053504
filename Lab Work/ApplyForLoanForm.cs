@@ -1,4 +1,6 @@
-﻿using Lab_Work.Entities.User;
+﻿using Lab_Work.Data;
+using Lab_Work.Entities;
+using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +15,20 @@ namespace Lab_Work
 {
     public partial class ApplyForLoanForm : Form
     {
-        ClientPanelForm clientPanelForm;
+        private ClientPanelForm clientPanelForm;
+        private int accountId;
+        private DbSet<Bank> banksDb;
+        private DbSet<User> usersDb;
         public ApplyForLoanForm(ClientPanelForm form)
         {
             InitializeComponent();
 
-            AccountNumberLabel.Text += form.BankAccountsListBox.SelectedItem;
+            banksDb = Database.GetBanks();
+            usersDb = Database.GetUsers();
 
+            accountId = Convert.ToInt32(form.BankAccountsListBox.SelectedItem);
+            AccountNumberLabel.Text += accountId;
+           
             clientPanelForm = form;
             form.Hide();
         }
@@ -53,31 +62,34 @@ namespace Lab_Work
             if (ChoosePercentTypeComboBox.SelectedIndex != -1 && TermComboBox.SelectedIndex != -1
                 && PurposeOfLoanTextBox.Text.Length > 0 && AmountTextBox.Text.Length > 0)
             {
-
+                Loan loan = null;
                 if (ChoosePercentTypeComboBox.SelectedIndex == 1 && TermComboBox.SelectedIndex == 4)
                 {
-                    Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(IndividualPercentTextBox.Text), (int)TermNumericUpDown.Value);
+                    loan = Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(IndividualPercentTextBox.Text), (int)TermNumericUpDown.Value);
                 }
                 else if (ChoosePercentTypeComboBox.SelectedIndex == 1)
                 {
                     int term = Convert.ToInt32(TermComboBox.SelectedItem.ToString().Trim(new char[] { ' ', 'm', 'o', 'n', 't', 'h' }));
-                    
-                    Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(IndividualPercentTextBox.Text), term);
+
+                    loan = Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(IndividualPercentTextBox.Text), term);
                 }
                 else if (TermComboBox.SelectedIndex == 4)
                 {
-                    Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(ChoosePercentTypeComboBox.SelectedItem), (int)TermNumericUpDown.Value);
+                    loan = Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(ChoosePercentTypeComboBox.SelectedItem), (int)TermNumericUpDown.Value);
                 }
                 else
                 {
                     int term = Convert.ToInt32(TermComboBox.SelectedItem.ToString().Trim(new char[] { ' ', 'm', 'o', 'n', 't', 'h' }));
-                    Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(ChoosePercentTypeComboBox.SelectedItem), term);
+                    loan = Logged.User.Client.CreateLoan(Convert.ToDecimal(AmountTextBox.Text), Convert.ToInt32(ChoosePercentTypeComboBox.SelectedItem), term);
                 }
+                loan.AccountId = accountId;
+                banksDb.Save();
+                usersDb.Save();
 
                 MessageBox.Show("your loan application has been successfully submitted.\n Wait for confirmation.", "Success");
                 
                 clientPanelForm.Show();
-                this.Close();
+                Close();
             }
         }
     }

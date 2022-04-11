@@ -262,6 +262,7 @@ namespace Lab_Work
             this.LoanIsApprovedButton.Text = "Approve";
             this.LoanIsApprovedButton.UseVisualStyleBackColor = true;
             this.LoanIsApprovedButton.Visible = false;
+            this.LoanIsApprovedButton.Click += new System.EventHandler(this.LoanIsApprovedButton_Click);
             // 
             // AdminPanelForm
             // 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_Work.Entities.User
+namespace Lab_Work.Entities.UserStruct
 {
     class User
     {
@@ -15,11 +15,10 @@ namespace Lab_Work.Entities.User
         public bool IsApproved { get; set; } = false;
         
         public Client Client { get; set; }
-        public List<Role> Roles { get; set; }
+        public List<Role> Roles { get; set; } = new List<Role>();
 
         public User()
         {
-            Roles = new List<Role>();
         }
 
         public Role AddRole(string roleName)

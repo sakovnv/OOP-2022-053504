@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lab_Work.AddBankForm" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAIACCBAAACAAAAAAAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.AddClientForm" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAgAAAACCEAAAAAgiLAAASAABAIACAAAACQAIQAAA=</HashCode>
+      <FileName>AddClientForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.AdminPanelForm" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAjJBgBSAEgACAAACSQBASAQBQCgAAIIAgAAAAAAg=</HashCode>
+      <FileName>AdminPanelForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.ApplyForLoanForm" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAEAAACIAAAAAAQCAAAACAAAAAQAAAAAEAAAAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.AuthForm" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAQAIAAACBQAAAAAADACAAiAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>AuthForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.ClientPanelForm" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAFgJkAwCAAAAAQAACAIAACAII8AKIAQKEEAAAICAA=</HashCode>
+      <FileName>ClientPanelForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.MainForm" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAIAACAQAACAAAAAAAAAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Program" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.RegisterForm" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgKAEADBQAAAgAAiAAAAiAAEAIQCAAAAAAAIQECA=</HashCode>
+      <FileName>RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Data.Database" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Data.DbSet&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAABABAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Data\DbSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Entities.User.Logged" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\Logged.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Entities.User.Role" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Entities.User.User" Collapsed="true">
+    <Position X="1.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAACAAAAAAgAAAAAAAAgAAAAACAAASAAAAAAQ=</HashCode>
+      <FileName>Entities\User\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Entities.Bank" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAAEACAAAAQAAAAAAAAAAAADAABAAAA=</HashCode>
+      <FileName>Entities\Bank.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Entities.BankAccount" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAACACAAAAAgAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Entities\BankAccount.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Entities.Client" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgIAACYAAIAEAAEARAAAAAAAAACAACggEEAAAMA=</HashCode>
+      <FileName>Entities\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Entities.Company" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAIAAAAAAAQAAQAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Entities.Deposit" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAACAAAEgAgAAEAAACAAAAAA=</HashCode>
+      <FileName>Entities\Deposit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab_Work.Entities.Loan" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgAAAACAAAEgAAACEAAACAAAAAA=</HashCode>
+      <FileName>Entities\Loan.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Lab_Work.Library.HashCalculating" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Library\HashCalculating.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Lab_Work.IBank" Collapsed="true">
+    <Position X="1.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAABAAAA=</HashCode>
+      <FileName>Interfaces\IBank.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lab_Work.Interfaces.IBankAccount" Collapsed="true">
+    <Position X="3.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IBankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lab_Work.Interfaces.IClient" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAACIAAIAAAAEARAAAAAAAAAAAAAggAAAAAIA=</HashCode>
+      <FileName>Interfaces\IClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lab_Work.Interfaces.ICompany" Collapsed="true">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAIAAAAAAAQAAQAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICompany.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lab_Work.Interfaces.IDbSet&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDbSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Lab_Work.Interfaces.ILoan" Collapsed="true">
+    <Position X="1.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAEAAACAAAAAA=</HashCode>
+      <FileName>Interfaces\ILoan.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

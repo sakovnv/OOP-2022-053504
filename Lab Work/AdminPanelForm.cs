@@ -1,6 +1,7 @@
 ﻿using Lab_Work.Data;
 using Lab_Work.Entities;
-using Lab_Work.Entities.User;
+using Lab_Work.Entities.Builder;
+using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace Lab_Work
     public partial class AdminPanelForm : Form
     {
         DbSet<User> usersDb;
+        DbSet<Bank> banksDb;
         public AdminPanelForm()
         {
             usersDb = Database.GetUsers();
+            banksDb = Database.GetBanks();
 
             InitializeComponent();
             FillUsersList();
@@ -34,6 +37,7 @@ namespace Lab_Work
 
         private void UsersListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoansListBox.Items.Clear();
             IdLabel.Text = "ID: " + usersDb.Set[UsersListBox.SelectedIndex].Id;
             LoginLabel.Text = "Login: " + usersDb.Set[UsersListBox.SelectedIndex].Login;
             EmailLabel.Text = "Email " + usersDb.Set[UsersListBox.SelectedIndex].Email;
@@ -67,7 +71,14 @@ namespace Lab_Work
 
         private void ApproveButton_Click(object sender, EventArgs e)
         {
+            UserBuilder userBuilder = new UserBuilder(usersDb.Set[UsersListBox.SelectedIndex]);
+
             usersDb.Set[UsersListBox.SelectedIndex].IsApproved = true;
+            userBuilder.AddClientRole();
+            usersDb.Save();
+                
+            ApproveButton.Visible = false;
+            IsApprovedLabel.Text = "Is approved: " + usersDb.Set[UsersListBox.SelectedIndex].IsApproved;
         }
 
         private void LoansListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +103,17 @@ namespace Lab_Work
                     LoanIsApprovedButton.Visible = false;
                 }
             }
+        }
+
+        private void LoanIsApprovedButton_Click(object sender, EventArgs e)
+        {
+            Loan loan = usersDb.Set[UsersListBox.SelectedIndex].Client.Loans[LoansListBox.SelectedIndex];
+            loan.IsApproved = true;
+            LoanIsApprovedButton.Visible = false;
+            BankAccount account = usersDb.Set[UsersListBox.SelectedIndex].Client.GetAccount(loan.AccountId);
+            account.Add(loan.Amount);
+            banksDb.Save();
+            usersDb.Save();
         }
     }
 }

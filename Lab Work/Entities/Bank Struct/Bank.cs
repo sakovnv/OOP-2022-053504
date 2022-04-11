@@ -20,6 +20,8 @@ namespace Lab_Work.Entities
 
         public void AddClient(Client client)
         {
+            client.BankId = Id;
+
             Clients.Add(client);
         }
 

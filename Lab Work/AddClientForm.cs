@@ -1,5 +1,6 @@
 ﻿using Lab_Work.Data;
 using Lab_Work.Entities;
+using Lab_Work.Entities.Builder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

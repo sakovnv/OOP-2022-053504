@@ -32,7 +32,7 @@ namespace Lab_Work.Data
         {
             using (StreamWriter fs = new StreamWriter(FileName, false))
             {
-                string json = JsonSerializer.Serialize(Set, new JsonSerializerOptions { WriteIndented = true });
+                string json = JsonSerializer.Serialize(Set, new JsonSerializerOptions { WriteIndented = true, IncludeFields = true });
                 fs.Write(json);
             }
         }
@@ -43,6 +43,5 @@ namespace Lab_Work.Data
             Set = JsonSerializer.Deserialize<List<T>>(json, new JsonSerializerOptions { WriteIndented = true, IncludeFields = true });
             return Set;
         }
-
     }
 }

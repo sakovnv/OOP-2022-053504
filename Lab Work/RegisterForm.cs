@@ -1,6 +1,7 @@
 ﻿using Lab_Work.Data;
 using Lab_Work.Entities;
-using Lab_Work.Entities.User;
+using Lab_Work.Entities.Builder;
+using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,13 +73,16 @@ namespace Lab_Work
                             PassportNumber = PassportNumberTextBox.Text,
                             Email = EmailTextBox.Text,
                             PhoneNumber = PhoneNumberTextBox.Text,
-                            Bank = bank
                         };
+                        bank.AddClient(client);
                         User newUser = new User() { Login = LoginTextBox.Text, Email = EmailTextBox.Text, Password = PasswordTextBox.Text };
                         newUser.Client = client;
 
+                        banksDb.Set.Add(bank);
                         usersDb.Set.Add(newUser);
+                        banksDb.Save();
                         usersDb.Save();
+
                         MessageBox.Show("Your account successfull registed\nWait for manager approves your account", "Success");
                     }
                     else

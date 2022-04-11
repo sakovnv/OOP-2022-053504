@@ -1,5 +1,5 @@
 ﻿using Lab_Work.Entities;
-using Lab_Work.Entities.User;
+using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +14,7 @@ namespace Lab_Work.Data
     {
         private static DbSet<Bank> Banks { get; set; }
         private static DbSet<User> Users { get; set; }
+        private static DbSet<Company> Companies { get; set; }
 
         public static DbSet<Bank> GetBanks()
         {
@@ -38,6 +39,19 @@ namespace Lab_Work.Data
             else
             {
                 return Users;
+            }
+        }
+
+        public static DbSet<Company> GetCompanies()
+        {
+            if (Companies == null)
+            {
+                Companies = new DbSet<Company>("Companies");
+                return Companies;
+            }
+            else
+            {
+                return Companies;
             }
         }
     }

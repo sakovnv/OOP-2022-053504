@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Library
 {
-    static class HashCalculating
+    static class HashCalculatingService
     {
         public static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {

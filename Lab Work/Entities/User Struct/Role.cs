@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_Work.Entities.User
+namespace Lab_Work.Entities.UserStruct
 {
     class Role
     {

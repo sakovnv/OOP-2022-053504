@@ -26,5 +26,6 @@ namespace Lab_Work.Entities
         public DateTime CreateTime { get; private set; }
         public DateTime EndTime { get; private set; }
         public bool IsApproved { get; set; } = false;
+        public int AccountId { get; set; }
     }
 }

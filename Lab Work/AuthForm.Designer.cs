@@ -35,6 +35,7 @@ namespace Lab_Work
             this.RegisterLinkLabel = new System.Windows.Forms.LinkLabel();
             this.AuthButton = new System.Windows.Forms.Button();
             this.AuthorizationLabel = new System.Windows.Forms.Label();
+            this.AsCompanyLinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LoginTextBox
@@ -98,11 +99,25 @@ namespace Lab_Work
             this.AuthorizationLabel.TabIndex = 5;
             this.AuthorizationLabel.Text = "Authorization";
             // 
+            // AsCompanyLinkLabel
+            // 
+            this.AsCompanyLinkLabel.AutoSize = true;
+            this.AsCompanyLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.AsCompanyLinkLabel.Location = new System.Drawing.Point(12, 143);
+            this.AsCompanyLinkLabel.Name = "AsCompanyLinkLabel";
+            this.AsCompanyLinkLabel.Size = new System.Drawing.Size(59, 15);
+            this.AsCompanyLinkLabel.TabIndex = 6;
+            this.AsCompanyLinkLabel.TabStop = true;
+            this.AsCompanyLinkLabel.Text = "Company";
+            this.AsCompanyLinkLabel.VisitedLinkColor = System.Drawing.Color.Black;
+            this.AsCompanyLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AsCompanyLinkLabel_LinkClicked);
+            // 
             // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 393);
+            this.Controls.Add(this.AsCompanyLinkLabel);
             this.Controls.Add(this.AuthorizationLabel);
             this.Controls.Add(this.AuthButton);
             this.Controls.Add(this.RegisterLinkLabel);
@@ -128,5 +143,6 @@ namespace Lab_Work
         private System.Windows.Forms.LinkLabel RegisterLinkLabel;
         private System.Windows.Forms.Button AuthButton;
         private System.Windows.Forms.Label AuthorizationLabel;
+        private System.Windows.Forms.LinkLabel AsCompanyLinkLabel;
     }
 }

@@ -16,7 +16,7 @@ namespace Lab_Work.Interfaces
         public string Email { get; set; }
 
         public Deposit CreateDeposit(Decimal amount, int percent, int term);
-        public void WithdrawDeposit(int id);
+        public Deposit WithdrawDeposit(int id);
         public void TransactionDeposit(Client client, Deposit deposit);
         public void BlockDeposit(int id);
         public void UnblockDeposit(int id);
