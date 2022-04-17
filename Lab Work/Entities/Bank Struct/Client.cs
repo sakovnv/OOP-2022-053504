@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class Client : IClient
+    public class Client : IClient
     {
         public int Id { get; set; }
         public string FullName { get; set; }

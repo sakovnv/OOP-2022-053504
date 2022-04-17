@@ -1,4 +1,5 @@
 ﻿using Lab_Work.Data;
+using Lab_Work.Entities;
 using Lab_Work.Entities.UserStruct;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace Lab_Work
     public partial class AuthForm : Form
     {
         DbSet<User> usersDb;
+        DbSet<Bank> banksDb;
         public AuthForm()
         {
             InitializeComponent();
 
             usersDb = Database.GetUsers();
+            banksDb = Database.GetBanks();
         }
 
         private void RegisterLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -42,6 +45,9 @@ namespace Lab_Work
                         {
                             usersDb.Save();
                             Logged.User = user;
+
+                            Bank bank = banksDb.Set.Find(item => item.Id == Logged.User.BankId);
+                            Logged.Client = bank.GetClient(Logged.User.ClientId);
                             if (user.HasRole("admin"))
                             {
                                 AdminPanelForm form = new AdminPanelForm();

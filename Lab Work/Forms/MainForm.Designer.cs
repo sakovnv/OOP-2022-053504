@@ -86,7 +86,7 @@ namespace Lab_Work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 602);
+            this.ClientSize = new System.Drawing.Size(443, 511);
             this.Controls.Add(this.ClientsListBox);
             this.Controls.Add(this.AddBankButton);
             this.Controls.Add(this.BanksListBox);

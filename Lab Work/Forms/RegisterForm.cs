@@ -76,9 +76,11 @@ namespace Lab_Work
                         };
                         bank.AddClient(client);
                         User newUser = new User() { Login = LoginTextBox.Text, Email = EmailTextBox.Text, Password = PasswordTextBox.Text };
-                        newUser.Client = client;
+                        newUser.ClientId = client.Id;
+                        newUser.BankId = bank.Id;
 
-                        banksDb.Set.Add(bank);
+                        newUser.Id = usersDb.Set[usersDb.Set.Count - 1].Id + 1;
+
                         usersDb.Set.Add(newUser);
                         banksDb.Save();
                         usersDb.Save();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class Loan : ILoan
+    public class Loan : ILoan
     {
         public int Id { get; set; }
         public Loan(Decimal amount, Decimal percent, int term)

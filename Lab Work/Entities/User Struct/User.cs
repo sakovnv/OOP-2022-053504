@@ -14,7 +14,8 @@ namespace Lab_Work.Entities.UserStruct
         public string Password { get; set; }
         public bool IsApproved { get; set; } = false;
         
-        public Client Client { get; set; }
+        public int BankId { get; set; }
+        public int ClientId { get; set; }
         public List<Role> Roles { get; set; } = new List<Role>();
 
         public User()

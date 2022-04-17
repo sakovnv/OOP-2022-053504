@@ -9,5 +9,6 @@ namespace Lab_Work.Entities.UserStruct
     static class Logged
     {
         public static User User { get; set; }
+        public static Client Client { get; set; }
     }
 }

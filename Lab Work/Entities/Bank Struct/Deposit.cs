@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class Deposit
+    public class Deposit
     {
         public int Id { get; set; }
         public Deposit(Decimal amount, int percent, int term)

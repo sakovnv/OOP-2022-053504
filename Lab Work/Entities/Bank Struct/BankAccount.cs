@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class BankAccount : IBankAccount
+    public class BankAccount : IBankAccount
     {
         public int Id { get; set; }
 

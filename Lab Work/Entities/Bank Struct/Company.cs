@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class Company : ICompany
+    public class Company : ICompany
     {
         public string Type { get; set; }
         public string LegalName { get; set; }

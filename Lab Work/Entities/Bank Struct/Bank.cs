@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work.Entities
 {
-    class Bank : IBank
+    public class Bank : IBank
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -22,12 +22,21 @@ namespace Lab_Work.Entities
         {
             client.BankId = Id;
 
+            if (Clients.Count != 0)
+            { 
+                client.Id = Clients[Clients.Count - 1].Id + 1;
+            }
+            else
+            {
+                client.Id = 0;
+            }
+
             Clients.Add(client);
         }
 
         public void DeleteClient(int id)
         {
-            Clients.Remove( Clients.Where(item => item.Id == id).First() );
+            Clients.Remove( Clients.Find(item => item.Id == id) );
         }
 
         public IEnumerable<Client> GetAllClients()
@@ -37,7 +46,7 @@ namespace Lab_Work.Entities
 
         public Client GetClient(int id)
         {
-            return Clients.Where(item => item.Id == id).First();
+            return Clients.Find(item => item.Id == id);
         }
 
         public override string ToString()
